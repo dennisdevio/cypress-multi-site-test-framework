@@ -1,23 +1,31 @@
 /// <reference types="cypress" />
 
-describe('manipluate language cookie', () => {
-    beforeEach(() => {
-        
+describe('manipulate language cookie', () => {
+
+    it('go to website', () => {
+
         cy.visit('https://www.linkedin.com/')
-      })
 
+    })
+      
+    it('get language cookie', () => {
 
-    it('cy.getCookie() - get lanuge cookie', () => {
-
-        cy.getCookie('lang', 'sv')
+        cy.getCookie('lang', 'en-us')
     
-        cy.getCookie('lang').should('have.property', 'en-us')
+        cy.getCookie('lang', 'en-us').should('have.property', 'en-us')
     })
     
-    it('cy.setCookie() - set new language cookie', () => {
+    it('set new language cookie', () => {
     
-        cy.setCookie('lang', 'sv')
+        cy.setCookie('lang', 'sv-se')
     
-        cy.getCookie('lang').should('have.property', 'sv')
+        cy.setCookie('lang', 'sv-se').should('have.property', 'sv-se')
     })
+
+    it('reload webpage', () => {
+    
+        cy.reload()
+    })
+
 })
+    
