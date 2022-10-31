@@ -51,5 +51,11 @@ You should see the following output
 v16.18.0
 ```
 
+The last requirement is npm. 
+
+However installing from the PPA above installs npm along with node.js.
+
+
+# Running Tests
 
 
