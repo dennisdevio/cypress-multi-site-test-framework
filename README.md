@@ -58,4 +58,55 @@ However installing from the PPA above installs npm along with node.js.
 
 # Running Tests
 
+To run cypress type thw following command
+
+```
+npx cypress open
+```
+
+To record tests with cypress type the following command
+
+```
+npx cypress run --record --key 'your-recording-key'
+```
+
+To run cypress only from the command line type the following command
+
+```
+npx cypress run --headless
+```
+
+# Results and conclusion
+
+I set up a spec to change the website language cookie.
+It consisted of four tests:
+
+* Go to website
+* Get the language cookie
+* Set new cookie
+* Reload page
+
+The first and last tests passed but the second and third test failed.
+
+Since this is my first time working with Cypress it could have gone better.
+
+However I
+
+* Set up the prequisites for installing Cypress and running on Linux
+* Installed on my Linux environment
+* Wrote tests
+* Ran the tests
+* Recorded the tests
+* Published the results on my GitHub and Cypress Dashboard
+
+With a bit more hands on experience and opportunity to explore the Cypress tool I could definitely see myself mastering it quite well and working with as it is a great tool to use for testing applications
+
+
+
+
+
+
+
+
+
 
