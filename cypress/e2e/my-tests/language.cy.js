@@ -2,7 +2,7 @@
 
 describe('manipulate language cookie', () => {
 
-    it('go to website', () => {
+    beforeEach(() => {
 
         cy.visit('https://www.linkedin.com/')
 
@@ -10,22 +10,16 @@ describe('manipulate language cookie', () => {
       
     it('get language cookie', () => {
 
-        cy.getCookie('lang', 'en-us')
+        cy.getCookie('lang', 'en-us').should('have.lang', 'en-us')
     
-        cy.getCookie('lang', 'en-us').should('have.property', 'en-us')
     })
     
     it('set new language cookie', () => {
     
-        cy.setCookie('lang', 'sv-se')
-    
-        cy.setCookie('lang', 'sv-se').should('have.property', 'sv-se')
+        cy.clearCookie('lang').then(() => {
+            cy.setCookie('lang', 'sv-se').then(() => {
+                cy.getCookie('lang').should('have.lang', 'sv-se')
+            })
+        })
     })
-
-    it('reload webpage', () => {
-    
-        cy.reload()
-    })
-
 })
-    
